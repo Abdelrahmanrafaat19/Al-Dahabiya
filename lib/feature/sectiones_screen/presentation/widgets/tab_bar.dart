@@ -47,7 +47,7 @@ class _TabBarCustamState extends State<TabBarCustam> {
               padding: EdgeInsets.zero,
               indicatorPadding: EdgeInsets.zero,
               labelPadding: EdgeInsets.zero,
-              onTap: (value) {
+              onTap: (value) async {
                 setState(() {
                   currentNumber = value;
                   catID = state.sectionModel.data![value].id;

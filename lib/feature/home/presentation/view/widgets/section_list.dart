@@ -19,7 +19,7 @@ class SectionList extends StatelessWidget {
     return BlocBuilder<SectionCubit, SectionState>(
       builder: (context, state) {
         if (state is SectionSuccessState) {
-          catID = state.sectionModel.data![0].id;
+          catID1 = state.sectionModel.data![0].id;
           return SliverGrid.builder(
             itemCount: state.sectionModel.data!.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
