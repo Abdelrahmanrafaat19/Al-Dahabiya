@@ -13,10 +13,16 @@ class LoginCubit extends Cubit<LoginState> {
 
     response.fold((faluire) => emit(LoginFailureState(faluire.message)),
         (data) {
-      localStorge.setString("token", data["data"]["token"]);
-      emit(
-        LoginSaccussState(data),
-      );
+      if (data["code"] == 200) {
+        localStorge.setString("token", data["data"]["token"]);
+        emit(
+          LoginSaccussState(data),
+        );
+      } else {
+        emit(
+          LoginSaccussState(data),
+        );
+      }
     });
   }
 }

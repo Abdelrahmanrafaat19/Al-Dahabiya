@@ -49,6 +49,8 @@ class _GovernmentRowState extends State<GovernmentRow> {
                   child: SizedBox(
                     height: 45.h,
                     child: DropDownTextField(
+                      listTextStyle: const TextStyle(),
+
                       searchDecoration: InputDecoration(
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(

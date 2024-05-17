@@ -73,7 +73,7 @@ void main() async {
 
   await Geolocator.checkPermission();
   await Geolocator.requestPermission();
-  await Hive.initFlutter("local_data");
+  await Hive.initFlutter();
   Hive.registerAdapter(CartProductDataAdapter());
   await Hive.openBox<CartProductData>("cart_box").then(
     (value) => debugPrint("The CartBox is Created"),
@@ -82,8 +82,10 @@ void main() async {
   sharedPreferences = await SharedPreferences.getInstance();
 
   runApp(
-     const MyApp(), // Wrap your app
-   
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
   );
 }
 

@@ -41,6 +41,8 @@ class _ZoneFieldState extends State<ZoneField> {
                   child: SizedBox(
                     height: 45.h,
                     child: DropDownTextField(
+                      listTextStyle: const TextStyle(),
+
                       searchDecoration: InputDecoration(
                         errorBorder: OutlineInputBorder(
                           borderSide: BorderSide(

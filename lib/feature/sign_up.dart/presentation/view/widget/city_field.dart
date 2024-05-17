@@ -44,6 +44,7 @@ class _CityFieldState extends State<CityField> {
                     height: 45.h,
                     child: DropDownTextField(
                       enableSearch: true,
+                      listTextStyle: const TextStyle(),
 
                       searchDecoration: InputDecoration(
                         hintText: S.of(context).choose,

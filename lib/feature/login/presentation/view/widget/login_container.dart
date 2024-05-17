@@ -50,7 +50,7 @@ class _LoginContainerState extends State<LoginContainer> {
                   builder: (context) => const BottomBarScreen(),
                 ),
                 (route) => false);
-          } else {
+          } else if (state.data["code"] == 400) {
             showDialog(
               context: context,
               builder: (context) => const AlertDialog(

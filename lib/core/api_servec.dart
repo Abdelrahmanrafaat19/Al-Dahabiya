@@ -17,7 +17,8 @@ class ApiServer {
         'Authorization': 'Bearer $token',
       }),
     );
-    print("This is From PostMethod ${response.data}");
+    print(
+        "This is From PostMethod ${response.data}     ${response.statusCode}");
     return response.data;
   }
 
