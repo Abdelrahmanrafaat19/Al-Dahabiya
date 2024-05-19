@@ -48,6 +48,7 @@ class _ProductBodyState extends State<ProductBody> {
                           ));
                         },
                         child: BandProductContainer(
+                          id: state.sectionsProductModel.data![index].id,
                           price: state.sectionsProductModel.data![index].price,
                           discounPrice: state
                               .sectionsProductModel.data![index].discountPrice,

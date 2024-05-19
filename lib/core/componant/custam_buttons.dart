@@ -10,9 +10,9 @@ Widget defaultButton(
     var onTap,
     double paddingrl = 0.0,
     double paddingtb = 0.0}) {
-  return InkWell(
-    highlightColor: const Color(0xffF8F8F8),
-    splashColor: const Color(0xffF8F8F8),
+  return GestureDetector(
+    // highlightColor: const Color(0xffF8F8F8),
+    // splashColor: const Color(0xffF8F8F8),
     onTap: onTap,
     child: Container(
         alignment: Alignment.center,

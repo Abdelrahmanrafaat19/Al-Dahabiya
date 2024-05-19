@@ -70,7 +70,6 @@ void main() async {
   BindingBase.debugZoneErrorsAreFatal = true;
   setUp();
   WidgetsFlutterBinding.ensureInitialized();
-
   await Geolocator.checkPermission();
   await Geolocator.requestPermission();
   await Hive.initFlutter();
@@ -78,9 +77,7 @@ void main() async {
   await Hive.openBox<CartProductData>("cart_box").then(
     (value) => debugPrint("The CartBox is Created"),
   );
-
   sharedPreferences = await SharedPreferences.getInstance();
-
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,

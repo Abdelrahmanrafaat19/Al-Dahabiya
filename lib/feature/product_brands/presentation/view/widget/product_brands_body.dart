@@ -30,7 +30,7 @@ class ProductBrandsBody extends StatelessWidget {
                 desiredItemWidth: width < height ? 170 : 230,
                 children: List.generate(
                     state.productBrandsModel["data"].length,
-                    (index) => InkWell(
+                    (index) => GestureDetector(
                           onTap: () async {
                             await BlocProvider.of<SingleProductCubit>(context)
                                 .getSingleProduct(state
@@ -51,6 +51,7 @@ class ProductBrandsBody extends StatelessWidget {
                                 ["image"],
                             hasDiscount: state.productBrandsModel["data"][index]
                                 ["has_discount"],
+                            id: state.productBrandsModel["data"][index]["id"],
                           ),
                         )),
               ));

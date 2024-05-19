@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secondwork/core/componant/custam_text.dart';
 import 'package:secondwork/core/method.dart';
@@ -33,7 +34,7 @@ class BottomContainerCart extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Expanded(
+          Flexible(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,35 +67,35 @@ class BottomContainerCart extends StatelessWidget {
               ],
             ),
           ),
-          InkWell(
-            onTap: () {
-              if (GetCartDataCubit.notes.isNotEmpty) {
-                Navigator.of(context).push(
-                  PageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) =>
-                        const ShopingScreen(),
-                  ),
-                );
-              } else {
-                showDialog(
-                  context: context,
-                  builder: (context) => AlertDialog(
-                    content: SizedBox(
-                      width: 100.w,
-                      height: 100.h,
-                      child: Center(
-                        child: customText(
-                          text: "Your Cart is Empty",
-                          color: SharedColor.mainColor,
-                          fontSize: getResponsiveFont(context, fontSize: 25),
+          Expanded(
+            child: InkWell(
+              onTap: () {
+                if (GetCartDataCubit.notes.isNotEmpty) {
+                  Navigator.of(context).push(
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const ShopingScreen(),
+                    ),
+                  );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      content: SizedBox(
+                        width: 100.w,
+                        height: 100.h,
+                        child: Center(
+                          child: customText(
+                            text: "Your Cart is Empty",
+                            color: SharedColor.mainColor,
+                            fontSize: getResponsiveFont(context, fontSize: 25),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                );
-              }
-            },
-            child: Expanded(
+                  );
+                }
+              },
               child: Container(
                 alignment: Alignment.center,
                 width: responsiveWeidth(context, 200),

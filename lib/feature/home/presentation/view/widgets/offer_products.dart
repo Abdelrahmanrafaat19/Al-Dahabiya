@@ -26,7 +26,7 @@ class OfferProductsBody extends StatelessWidget {
               desiredItemWidth: width < height ? 170 : 220,
               children: List.generate(
                   state.offerFilterProductModel.data!.length,
-                  (index) => InkWell(
+                  (index) => GestureDetector(
                         onTap: () async {
                           await BlocProvider.of<SingleProductCubit>(context)
                               .getSingleProduct(state

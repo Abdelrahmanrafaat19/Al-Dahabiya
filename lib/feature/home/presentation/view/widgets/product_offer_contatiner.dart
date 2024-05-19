@@ -1,13 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secondwork/core/componant/custam_text.dart';
 import 'package:secondwork/core/constant/constant.dart';
 import 'package:secondwork/core/method.dart';
 import 'package:secondwork/core/theme/color.dart';
-import 'package:secondwork/feature/cart/data/cart_model/cart_model.dart';
-import 'package:secondwork/feature/cart/presentation/bloc/add_cart_data_cubit/add_cart_data_cubit.dart';
 import 'package:secondwork/feature/home/presentation/view/widgets/add_tocart_button_offer.dart';
 
 class OfferProductContainer extends StatelessWidget {
@@ -96,17 +93,10 @@ class OfferProductContainer extends StatelessWidget {
             height: 10,
           ),
           AddToCartButton(
-            onTap: () {
-              BlocProvider.of<AddCartDataCubit>(context).addNote(
-                CartProductData(
-                  name: name,
-                  price: price,
-                  quality: 1,
-                  productPhoto: image,
-                  id: id,
-                ),
-              );
-            },
+            name: name,
+            price: price,
+            productPhoto: image,
+            id: id,
           )
         ],
       ),

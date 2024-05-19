@@ -14,7 +14,7 @@ import '../../../../../core/theme/color.dart';
 class BandProductContainer extends StatelessWidget {
   final String name, image;
   final dynamic price;
-  final dynamic discounPrice;
+  final dynamic discounPrice, id;
   final bool hasDiscount;
 
   const BandProductContainer(
@@ -23,7 +23,8 @@ class BandProductContainer extends StatelessWidget {
       required this.name,
       required this.price,
       required this.discounPrice,
-      required this.hasDiscount});
+      required this.hasDiscount,
+      required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +95,13 @@ class BandProductContainer extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          const AddToCartButton()
+          AddToCartButton(
+            name: name,
+            id: id,
+            price: hasDiscount == true ? discounPrice : price,
+            productPhoto: image,
+            quality: 1,
+          )
         ],
       ),
     );
